@@ -20,6 +20,9 @@ table{
 .card1{
 background-color: deepskyblue;
 }
+    body{
+        background-color: skyblue;
+    }
     </style>
     <div class="container-fluid">
     <div class="row">
@@ -32,14 +35,16 @@ background-color: deepskyblue;
     <table class="table table-bordered text-white">
     <thead>
     <tr>
+        <th> </th>
     <th>Name</th>
-    <th>Contact</th>
+        <th>Contact</th>
+
     </tr>
     </thead>
     <tbody>
     {% for i in customers %}
     <tr>
-    <td><a href="#">View</a>
+        <td><a href="{% url 'customer' i.id %}">View</a></td>
     <td>{{ i.first_name }}</td>
     <td>{{ i.mobile}}</td>
     </tr>
